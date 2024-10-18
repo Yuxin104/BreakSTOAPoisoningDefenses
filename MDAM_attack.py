@@ -1,26 +1,8 @@
 import torch 
-import utils
-import models
-import math
-import copy
 import numpy as np
-from agent import Agent
-from tqdm import tqdm
-from options import args_parser
-from aggregation import Aggregation
-from torch.utils.tensorboard import SummaryWriter
-from torch.utils.data import DataLoader
 import torch.nn as nn
-from time import ctime
-from torch.nn.utils import parameters_to_vector, vector_to_parameters
-from utils import H5Dataset
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
 from scipy.spatial.distance import pdist
 import copy 
-
-torch.backends.cudnn.enabled = True
-torch.backends.cudnn.benchmark = True
 
 def MDAM_attack(args,agent_updates_dict,avg_updates,agent_id_id_S,agent_data_sizes,dis,i):
     threshold_diff = 1e-3
@@ -47,9 +29,4 @@ def MDAM_attack(args,agent_updates_dict,avg_updates,agent_id_id_S,agent_data_siz
 
     return agent_updates_dict, max_dis_poi
             
-
-     
-    
-    
-      
               
